@@ -22,36 +22,15 @@ const customTools = {
     class: List,
     inlineToolbar: true,
   },
-  warning: {
-    class: Warning,
-    inlineToolbar: true,
-    config: {
-      titlePlaceholder: 'Title',
-      messagePlaceholder: 'Message',
-    },
-  },
-  code: Code,
   LinkTool: {
     class: LinkTool,
     config: {
       endpoint: `/api/${PluginId}/link`,
     },
   },
-  raw: {
-    class: Raw,
-    inlineToolbar: true,
-  },
   header: {
     class: Header,
     inlineToolbar: true,
-  },
-  quote: {
-    class: Quote,
-    inlineToolbar: true,
-    config: {
-      quotePlaceholder: 'Quote',
-      captionPlaceholder: 'Quote`s author',
-    },
   },
   marker: {
     class: Marker,
@@ -62,7 +41,26 @@ const customTools = {
     inlineToolbar: true,
   },
   delimiter: Delimiter,
-  inlineCode: InlineCode,
+  Color: {
+    class: ColorPlugin, // if load from CDN, please try: window.ColorPlugin
+    config: {
+       colorCollections: ['#EC7878','#9C27B0','#673AB7','#3F51B5','#0070FF','#03A9F4','#00BCD4','#4CAF50','#8BC34A','#CDDC39', '#FFF'],
+       defaultColor: '#FF1300',
+       type: 'text', 
+    }     
+  },
+  Marker: {
+    class: ColorPlugin, // if load from CDN, please try: window.ColorPlugin
+    config: {
+       defaultColor: '#FFBF00',
+       type: 'marker', 
+    }       
+  },
+  paragraph: {
+    class: Paragraph,
+    inlineToolbar: true,
+  },
+  underline: Underline
 }
 
 export default customTools
